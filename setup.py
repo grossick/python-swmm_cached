@@ -41,7 +41,7 @@ def read(*names, **kwargs):
     ) as fh:
         return fh.read()
 
-#os.system("./setup_c_dependencies.sh")
+os.system("./setup_c_dependencies.sh")
 
 setup(
     name='swmm-cached',
