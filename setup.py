@@ -41,7 +41,7 @@ def read(*names, **kwargs):
     ) as fh:
         return fh.read()
 
-os.system("./setup_c_dependencies.sh")
+#os.system("./setup_c_dependencies.sh")
 
 setup(
     name='swmm-cached',
@@ -107,8 +107,8 @@ setup(
             sources=[path],
             extra_compile_args=["-fopenmp"], #CFLAGS.split().append("-fopenmp"),
             extra_link_args=["-fopenmp"], #LFLAGS.split().append("-fopenmp"),
-            extra_objects=['lib/swmm/bin/libswmm5.a', 'lib/autocache/libautocache.a'],
-            include_dirs=[dirname(path), 'lib/autocache', 'lib/Stormwater-Management-Model/src/solver/include']
+            extra_objects=['clib/swmm/bin/libswmm5.a', 'clib/autocache/libautocache.a'],
+            include_dirs=[dirname(path), 'clib/autocache', 'clib/Stormwater-Management-Model/src/solver/include']
         )
         for root, _, _ in os.walk('src')
         for path in glob(join(root, '*.c'))

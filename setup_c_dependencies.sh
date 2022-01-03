@@ -7,9 +7,9 @@ SWMM_BUILD=swmm
 AUTOCACHE_REPO=https://github.com/grossick/autocache.git
 SWMM_REPO=https://github.com/grossick/Stormwater-Management-Model.git
 
-mkdir -p lib
+mkdir -p clib
 
-pushd lib
+pushd clib
 
 git clone $AUTOCACHE_REPO
 git clone $SWMM_REPO
